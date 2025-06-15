@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 
 
 export const metadata = {
-  title: 'Bug Tracker',
+  title: 'FealtyX  Bug Tracker Ankit Singh',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Providers>
           {children}
           <Toaster
-            position="top-right" // You can adjust position
+            position="top-right" 
             reverseOrder={false}
             toastOptions={{
               className: '',

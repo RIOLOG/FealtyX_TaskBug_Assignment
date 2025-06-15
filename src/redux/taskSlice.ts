@@ -10,11 +10,11 @@ export interface Task {
   title: string;
   description: string;
   status: TaskStatus;
-  assignee: string; // username
+  assignee: string; 
   priority: 'low' | 'medium' | 'high';
   createdAt: string;
   dueDate: string;
-  lastUpdatedAt?: string; // Optional field for last updated timestamp
+  lastUpdatedAt?: string; 
 }
 
 interface TaskState {
@@ -54,10 +54,6 @@ const taskSlice = createSlice({
       const newTask = { ...action.payload, id: uuidv4() };
       state.tasks.push(newTask);
     },
-    //   editTask: (state, action: PayloadAction<Task>) => {
-    //     const index = state.tasks.findIndex((task) => task.id === action.payload.id);
-    //     if (index !== -1) state.tasks[index] = action.payload;
-    //   },
 
   
     editTask: (state, action: PayloadAction<Task>) => {

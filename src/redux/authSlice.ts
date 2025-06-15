@@ -14,7 +14,7 @@ const initialState: AuthState = {
   role: null,
 };
 
-// Hardcoded users
+
 const users = [
   { username: 'dev1', password: 'devpass', role: 'developer' },
   { username: 'mgr1', password: 'mgrpass', role: 'manager' },

@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface TimeLog {
   taskId: string;
-  timeSpent: number; // in minutes
-  date: string; // ISO date string
+  timeSpent: number; 
+  date: string; 
 }
 
 interface TimeState {

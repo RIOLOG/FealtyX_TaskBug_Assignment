@@ -15,12 +15,7 @@ export default function DashboardPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Redirect if not authenticated
     if (!isAuthenticated) {
-      // Optional: Add a toast notification for unauthenticated access
-      // toast.error('You need to be logged in to access the dashboard.', {
-      //   id: 'auth-error', // Prevents duplicate toasts
-      // });
       router.push('/login');
     }
   }, [isAuthenticated, router]);
@@ -34,10 +29,7 @@ export default function DashboardPage() {
     router.push('/');
   };
 
-  // Optional: A simple loading state indicator if authentication check takes time
   if (!isAuthenticated && typeof window !== 'undefined') {
-    // Only show loading if we are client-side and not authenticated yet
-    // This prevents showing a loader briefly on initial load when server-side rendering
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
         <div className="text-xl font-semibold text-gray-700 dark:text-gray-300">
@@ -49,7 +41,6 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
-      {/* Header/Navigation */}
       <header className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex-shrink-0">
@@ -67,7 +58,6 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      {/* Main Content Area */}
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           {/* Dashboard Welcome */}
@@ -80,7 +70,6 @@ export default function DashboardPage() {
             </p>
           </div>
 
-          {/* Role-Based Views */}
           {role === 'developer' ? (
             <DeveloperView />
           ) : role === 'manager' ? (
@@ -94,7 +83,7 @@ export default function DashboardPage() {
         </div>
       </main>
 
-      {/* Optional: Footer */}
+
       <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-8 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 dark:text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} Ankit Singh. All rights reserved.
@@ -107,54 +96,3 @@ export default function DashboardPage() {
 
 
 
-
-
-//////////////////////////////////////////////////////////
-
-// 'use client';
-
-// import { useDispatch, useSelector } from 'react-redux';
-// import { RootState } from '@/redux/store';
-// import { useEffect } from 'react';
-// import { useRouter } from 'next/navigation';
-// import { logout } from '@/redux/authSlice';
-// import DeveloperView from '@/components/Dashboard/DeveloperView';
-// import ManagerView from '@/components/Dashboard/ManagerView';
-// import { toast } from 'react-toastify';
-
-// export default function DashboardPage() {
-//   const { isAuthenticated, role } = useSelector((state: RootState) => state.auth);
-//   const router = useRouter();
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     if (!isAuthenticated) {
-//       router.push('/login');
-//     }
-//   }, [isAuthenticated]);
-
-//   const handleLogout = () => {
-//     dispatch(logout());
-//     toast.success('Logged out successfully');
-//     router.push('/');
-//   };
-
-//   return (
-//     <main className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-5xl mx-auto">
-//         <div className="flex items-center justify-between mb-8">
-//           <h1 className="text-3xl font-semibold text-gray-800">Dashboard</h1>
-//           <button
-//             onClick={handleLogout}
-//             className="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition"
-//           >
-//             Logout
-//           </button>
-//         </div>
-
-//         {role === 'developer' && <DeveloperView />}
-//         {role === 'manager' && <ManagerView />}
-//       </div>
-//     </main>
-//   );
-// }
