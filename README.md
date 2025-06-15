@@ -35,7 +35,6 @@ A modern and role-based Bug Tracking & Task Management application built using *
   - Assignee
   - Due Date
   - Time Logs
-  - Special case: when category is **Annual Forecast Revenue**, the user must enter a Year.
 
 ### 🔄 4. Task/Bug Management
 - Developers:
