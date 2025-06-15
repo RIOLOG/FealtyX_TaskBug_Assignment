@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐞 Smart Bug Tracker (Next.js + Redux Toolkit + Tailwind CSS)
+# Deployed Link: https://fealty-x-task-bug-assignment.vercel.app/login
 
-## Getting Started
 
-First, run the development server:
+A modern and role-based Bug Tracking & Task Management application built using **Next.js 13**, **Redux Toolkit**, **Redux Persist**, **Tailwind CSS**, and **React Charts**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> 💡 Designed for Developers & Managers to collaboratively manage, track, and analyze project bugs & tasks effectively.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### ✅ 1. Authentication & Role Management
+- Simple login with mock authentication (hardcoded credentials or local JSON).
+- Two roles supported:
+  - 👨‍💻 **Developer**
+  - 👩‍💼 **Manager**
+- Role-based dashboard routing.
 
-## Learn More
+### 🖥️ 2. Dashboard
+- Developer Dashboard:
+  - View assigned tasks/bugs with full details.
+  - Track bug/task status updates.
+- Manager Dashboard:
+  - View all bugs (open, closed, and pending approval).
+  - Trend line showing concurrent tasks per day using **React Charts**.
+  - Time tracking summary for all developers.
 
-To learn more about Next.js, take a look at the following resources:
+### 🐛 3. Task/Bug Creation
+- Developers can create new bugs/tasks with:
+  - Title
+  - Description
+  - Priority
+  - Status
+  - Assignee
+  - Due Date
+  - Time Logs
+  - Special case: when category is **Annual Forecast Revenue**, the user must enter a Year.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔄 4. Task/Bug Management
+- Developers:
+  - Edit, update, or delete tasks.
+  - Mark bugs as closed (requires manager verification).
+- Managers:
+  - Review bug closures.
+  - Approve or reopen bugs.
+- Task Filtering/Sorting:
+  - Filter by priority, status, and more.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### ⏱️ 5. Time Tracker
+- Developers can log time against each task.
+- Track time spent per task.
+- Managers can monitor time logs for all developers.
 
-## Deploy on Vercel
+### 💅 6. UI/UX & Responsiveness
+- Clean, responsive, and mobile-friendly design using **Tailwind CSS**.
+- Dashboard, Modals, Forms, Charts and Notifications provide a smooth user experience.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ⚙️ Tech Stack
+
+| Layer        | Technology                     |
+|--------------|---------------------------------|
+| Framework    | [Next.js 13+](https://nextjs.org/) |
+| Styling      | [Tailwind CSS](https://tailwindcss.com/) |
+| State Mgmt   | [Redux Toolkit](https://redux-toolkit.js.org/) + [Redux Persist](https://github.com/rt2zz/redux-persist) |
+| Charting     | [Recharts](https://recharts.org/) |
+| Notifications| [React Toastify](https://fkhadra.github.io/react-toastify/) |
+| Persistence  | LocalStorage via Redux Persist |
+
+---
+
+🔐 Mock Credentials
+
+Manager:    { username: 'mgr1', password: 'mgrpass'}
+Developer:  { username: 'dev1', password: 'devpass'}
+
+
