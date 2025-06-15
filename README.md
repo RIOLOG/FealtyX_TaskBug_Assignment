@@ -70,6 +70,31 @@ A modern and role-based Bug Tracking & Task Management application built using *
 
 ---
 
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js v18+
+- Yarn or npm
+
+### 📦 Installation
+
+```bash
+git clone https://github.com/yourusername/smart-bug-tracker.git
+cd smart-bug-tracker
+npm install
+# or
+yarn install
+🏁 Running Locally
+bash
+Copy
+Edit
+npm run dev
+# or
+yarn dev
+
 🔐 Mock Credentials
 
 Manager:    { username: 'mgr1', password: 'mgrpass'}
